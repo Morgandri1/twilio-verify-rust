@@ -23,14 +23,14 @@ pub struct CreateNewFactorParams {
     pub identity: String,
     /// The friendly name of this Factor. This can be any string up to 64 characters, meant for humans to distinguish between Factors. For `factor_type` `push`, this could be a device name. For `factor_type` `totp`, this value is used as the “account name” in constructing the `binding.uri` property. At the same time, we recommend avoiding providing PII.
     pub friendly_name: String,
-    pub factor_type: models::models::NewFactorEnumFactorTypes,
+    pub factor_type: models::NewFactorEnumFactorTypes,
     /// The algorithm used when `factor_type` is `push`. Algorithm supported: `ES256`
     pub binding_alg: Option<String>,
     /// The Ecdsa public key in PKIX, ASN.1 DER format encoded in Base64.  Required when `factor_type` is `push`
     pub binding_public_key: Option<String>,
     /// The ID that uniquely identifies your app in the Google or Apple store, such as `com.example.myapp`. It can be up to 100 characters long.  Required when `factor_type` is `push`.
     pub config_app_id: Option<String>,
-    pub config_notification_platform: Option<models::models::NewFactorEnumNotificationPlatforms>,
+    pub config_notification_platform: Option<models::NewFactorEnumNotificationPlatforms>,
     /// For APN, the device token. For FCM, the registration token. It is used to send the push notifications. Must be between 32 and 255 characters long.  Required when `factor_type` is `push`.
     pub config_notification_token: Option<String>,
     /// The Verify Push SDK version used to configure the factor  Required when `factor_type` is `push`
@@ -43,9 +43,9 @@ pub struct CreateNewFactorParams {
     pub config_skew: Option<i32>,
     /// Number of digits for generated TOTP codes. Must be between 3 and 8, inclusive. The default value is defined at the service level in the property `totp.code_length`. If not configured defaults to 6.  Used when `factor_type` is `totp`
     pub config_code_length: Option<i32>,
-    pub config_alg: Option<models::models::NewFactorEnumTotpAlgorithms>,
+    pub config_alg: Option<models::NewFactorEnumTotpAlgorithms>,
     /// Custom metadata associated with the factor. This is added by the Device/SDK directly to allow for the inclusion of device information. It must be a stringified JSON with only strings values eg. `{\\\"os\\\": \\\"Android\\\"}`. Can be up to 1024 characters in length.
-    pub metadata: Option<models::serde_json::Value>
+    pub metadata: Option<serde_json::Value>
 }
 
 

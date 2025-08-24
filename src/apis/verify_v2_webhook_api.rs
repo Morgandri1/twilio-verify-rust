@@ -25,8 +25,8 @@ pub struct CreateWebhookParams {
     pub event_types: Vec<String>,
     /// The URL associated with this Webhook.
     pub webhook_url: String,
-    pub status: Option<models::models::WebhookEnumStatus>,
-    pub version: Option<models::models::WebhookEnumVersion>
+    pub status: Option<models::WebhookEnumStatus>,
+    pub version: Option<models::WebhookEnumVersion>
 }
 
 /// struct for passing parameters to the method [`delete_webhook`]
@@ -73,8 +73,8 @@ pub struct UpdateWebhookParams {
     pub event_types: Option<Vec<String>>,
     /// The URL associated with this Webhook.
     pub webhook_url: Option<String>,
-    pub status: Option<models::models::WebhookEnumStatus>,
-    pub version: Option<models::models::WebhookEnumVersion>
+    pub status: Option<models::WebhookEnumStatus>,
+    pub version: Option<models::WebhookEnumVersion>
 }
 
 

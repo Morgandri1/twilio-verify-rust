@@ -74,7 +74,7 @@ pub struct UpdateFactorParams {
     pub config_skew: Option<i32>,
     /// Number of digits for generated TOTP codes. Must be between 3 and 8, inclusive
     pub config_code_length: Option<i32>,
-    pub config_alg: Option<models::models::FactorEnumTotpAlgorithms>,
+    pub config_alg: Option<models::FactorEnumTotpAlgorithms>,
     /// The transport technology used to generate the Notification Token. Can be `apn`, `fcm` or `none`.  Required when `factor_type` is `push`.
     pub config_notification_platform: Option<String>
 }

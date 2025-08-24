@@ -30,7 +30,7 @@ pub struct CreateChallengeParams {
     /// A list of objects that describe the Fields included in the Challenge. Each object contains the label and value of the field, the label can be up to 36 characters in length and the value can be up to 128 characters in length. Used when `factor_type` is `push`. There can be up to 20 details fields.
     pub details_fields: Option<Vec<serde_json::Value>>,
     /// Details provided to give context about the Challenge. Not shown to the end user. It must be a stringified JSON with only strings values eg. `{\\\"ip\\\": \\\"172.168.1.234\\\"}`. Can be up to 1024 characters in length
-    pub hidden_details: Option<models::serde_json::Value>,
+    pub hidden_details: Option<serde_json::Value>,
     /// Optional payload used to verify the Challenge upon creation. Only used with a Factor of type `totp` to carry the TOTP code that needs to be verified. For `TOTP` this value must be between 3 and 8 characters long.
     pub auth_payload: Option<String>
 }
@@ -79,7 +79,7 @@ pub struct UpdateChallengeParams {
     /// The optional payload needed to verify the Challenge. E.g., a TOTP would use the numeric code. For `TOTP` this value must be between 3 and 8 characters long. For `Push` this value can be up to 5456 characters in length
     pub auth_payload: Option<String>,
     /// Custom metadata associated with the challenge. This is added by the Device/SDK directly to allow for the inclusion of device information. It must be a stringified JSON with only strings values eg. `{\\\"os\\\": \\\"Android\\\"}`. Can be up to 1024 characters in length.
-    pub metadata: Option<models::serde_json::Value>
+    pub metadata: Option<serde_json::Value>
 }
 
 

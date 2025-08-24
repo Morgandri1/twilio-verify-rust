@@ -38,9 +38,9 @@ pub struct CreateVerificationParams {
     /// The payee of the associated PSD2 compliant transaction. Requires the PSD2 Service flag enabled.
     pub payee: Option<String>,
     /// The custom key-value pairs of Programmable Rate Limits. Keys correspond to `unique_name` fields defined when [creating your Rate Limit](https://www.twilio.com/docs/verify/api/service-rate-limits). Associated value pairs represent values in the request that you are rate limiting on. You may include multiple Rate Limit values in each request.
-    pub rate_limits: Option<models::serde_json::Value>,
+    pub rate_limits: Option<serde_json::Value>,
     /// [`email`](https://www.twilio.com/docs/verify/email) channel configuration in json format. The fields 'from' and 'from_name' are optional but if included the 'from' field must have a valid email address.
-    pub channel_configuration: Option<models::serde_json::Value>,
+    pub channel_configuration: Option<serde_json::Value>,
     /// Your [App Hash](https://developers.google.com/identity/sms-retriever/verify#computing_your_apps_hash_string) to be appended at the end of your verification SMS body. Applies only to SMS. Example SMS body: `<#> Your AppName verification code is: 1234 He42w354ol9`.
     pub app_hash: Option<String>,
     /// The message [template](https://www.twilio.com/docs/verify/api/templates). If provided, will override the default template for the Service. SMS and Voice channels only.
@@ -51,7 +51,7 @@ pub struct CreateVerificationParams {
     pub device_ip: Option<String>,
     /// An optional Boolean value to indicate the requirement of sna client token in the SNA URL invocation response for added security. This token must match in the Verification Check request to confirm phone number verification.
     pub enable_sna_client_token: Option<bool>,
-    pub risk_check: Option<models::models::VerificationEnumRiskCheck>,
+    pub risk_check: Option<models::VerificationEnumRiskCheck>,
     /// A string containing a JSON map of key value pairs of tags to be recorded as metadata for the message. The object may contain up to 10 tags. Keys and values can each be up to 128 characters in length.
     pub tags: Option<String>
 }
@@ -72,7 +72,7 @@ pub struct UpdateVerificationParams {
     pub service_sid: String,
     /// The Twilio-provided string that uniquely identifies the Verification resource to update.
     pub sid: String,
-    pub status: models::models::VerificationEnumStatus
+    pub status: models::VerificationEnumStatus
 }
 
 
